@@ -1,17 +1,9 @@
 #!/usr/bin/env python3
 """
-This is an exercise in secure symmetric-key encryption, implemented in pure
-Python (no external libraries needed).
-
 Original AES-128 implementation by Bo Zhu (http://about.bozhu.me) at 
 https://github.com/bozhu/AES-Python
 
-PKCS#7 padding, CBC mode, PKBDF2, HMAC, byte array and string support added 
-by Lucas Boppre (http://boppreh.com) at https://github.com/boppreh/aes
-
-
-Although this is an exercise, the `encrypt` and `decrypt` functions should
-provide reasonable security to encrypted messages. The algorithm is as follows:
+The algorithm is as follows:
 
 salt <- random(16)                                                        (1)
 key_aes, key_hmac, iv <- PKBDF2(master_key, salt)                         (2)
